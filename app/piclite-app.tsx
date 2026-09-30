@@ -401,9 +401,7 @@ type WorkspacePlugin = {
 };
 
 const BUILTIN_WORKSPACE_PLUGINS: WorkspacePlugin[] = [
-  { id: "watcher", nameZh: "文件夹监测", nameEn: "Folder watch", kind: "builtin", enabled: true },
   { id: "rename", nameZh: "图片批量重命名", nameEn: "Batch image rename", kind: "builtin", enabled: true },
-  { id: "gallery", nameZh: "图库", nameEn: "Library", kind: "builtin", enabled: true },
 ];
 
 function loadWorkspacePlugins(): WorkspacePlugin[] {
@@ -2327,7 +2325,7 @@ function PicLiteWorkbench({ nativeBridge, initialView = "workspace", standaloneP
   const [uploadingId, setUploadingId] = useState<string | null>(null);
   const [updateInfo, setUpdateInfo] = useState<UpdateInfo | null>(null);
   const [checkingUpdate, setCheckingUpdate] = useState(false);
-  const [downloadGuideVisible, setDownloadGuideVisible] = useState(true);
+  const [downloadGuideVisible, setDownloadGuideVisible] = useState(false);
   const [browserPlatform, setBrowserPlatform] = useState<BrowserPlatform>("generic");
   const [nativeProfileReady, setNativeProfileReady] = useState(() => !nativeBridge);
   const fileInputRef = useRef<HTMLInputElement>(null);
